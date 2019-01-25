@@ -1,21 +1,11 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { createAppContainer, createStackNavigator } from "react-navigation";
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Hello World!</Text>
-      </View>
-    );
-  }
-}
+import LoginScreen from "./src/pages/LoginScreen";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  }
+const AppNavigator = createStackNavigator({
+  Login: LoginScreen
 });
+
+const AppContainer = createAppContainer(AppNavigator);
+
+export default AppContainer;
